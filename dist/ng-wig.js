@@ -37,13 +37,6 @@ angular.module('ngWig')
 
         scope.execCommand = function (command, options) {
           if(scope.editMode ) return false;
-
-          if (command === 'createlink') {
-            options = prompt('Please enter the URL', 'http://');
-            if(!options) {
-              return;
-            }
-          }
           scope.$broadcast('execCommand', {command: command, options: options});
         };
 		
